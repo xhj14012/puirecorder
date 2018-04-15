@@ -30,10 +30,10 @@ console.log(("    ___     __  ______   ____                           __        
   / /_/ / / / / // /   / /_/ / _ \\/ ___/ __ \\/ ___/ __  / _ \\/ ___/\n\
  / _, _/ / /_/ // /   / _, _/  __/ /__/ /_/ / /  / /_/ /  __/ /    \n\
 /_/      \\____/___/  /_/ |_|\\___/\\___/\\____/_/   \\__,_/\\___/_/    \n\
-                    puirecorder based on uirecorder v"+pkg.version).green);
+                    puirecorder v0.1.0 (based on uirecorder v"+pkg.version+")").green);
 
 console.log('');
-console.log('Official Site: http://uirecorder.com'.cyan);
+//console.log('Official Site: http://uirecorder.com'.cyan);
 console.log('------------------------------------------------------------------\n'.green);
 
 program
