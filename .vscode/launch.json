@@ -8,7 +8,7 @@
             "type": "node",
             "request": "launch",
             "name": "Debug UIRecorder Local",
-            "cwd": "${workspaceRoot}/test/test",
+            "cwd": "${workspaceRoot}/test",
             "args": [ "${file}"],
             "console": "integratedTerminal"
         }
