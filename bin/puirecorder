@@ -18,10 +18,10 @@ function map(val) {
 
 // stdout log
 var rawStdoutWrite = process.stdout.write;
-fs.writeFileSync('uirecorder.log', '')
+fs.writeFileSync('puirecorder.log', '')
 process.stdout.write = function(string, encoding, fileDescriptor) {
     var nocolor = string.replace(/(\[\d+[mdc]|\[K)/gi, '');
-    fs.appendFileSync('uirecorder.log', nocolor)
+    fs.appendFileSync('puirecorder.log', nocolor)
     rawStdoutWrite.apply(process.stdout, arguments);
 }
 
@@ -40,11 +40,9 @@ program
     .version(pkg.version)
     .option('-l, --lang <en|zh-cn|zh-tw>', 'change language')
     .option('--no-color', 'disable colors')
-    .option('-m --mobile', 'mobile mode')
     .option('-d --debug', 'debug mode')
     .option('-r --raw', 'save raw cmds')
     .option('--default', 'open checker browser and set maximize by default')
-    .option('--device [value]', 'set mobile device name');
 
 var cmd = null;
 
@@ -54,7 +52,6 @@ program.command('init')
         cmd = 'init';
         UIRecorder.init({
             locale: program.lang,
-            mobile: program.mobile,
             debug: program.debug
         });
     });
@@ -66,11 +63,9 @@ program.command('start')
         UIRecorder.start({
             locale: program.lang,
             cmdFilename: program.args.length === 2 ? program.args[0] : '',
-            mobile: program.mobile,
             debug: program.debug,
             raw: program.raw,
-            default: program.default,
-            mobileDevice: program.device
+            default: program.default
         });
     });
 
